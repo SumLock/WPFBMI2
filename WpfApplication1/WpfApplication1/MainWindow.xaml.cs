@@ -81,59 +81,73 @@ namespace WpfApplication1
 
         private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            height.Text = slider1.Value.ToString();
-            weight.Text = slider2.Value.ToString();
-            //定義變數
-            double H, W;
-            H = Convert.ToInt32(slider1.Value);
-            W = Convert.ToInt32(slider2.Value);
-            //單位轉換
-            double h = H / 100;
-            //BMI公式計算
-            double r = (W / (h * h));
-            result.Text = r.ToString();
-            height.Background = Brushes.GreenYellow;
-            weight.Background = Brushes.GreenYellow;
-            if (r > 30)
+            try
             {
-                result.Background = Brushes.Red;
+                height.Text = slider1.Value.ToString();
+                weight.Text = slider2.Value.ToString();
+                //定義變數
+                double H, W;
+                H = Convert.ToInt32(slider1.Value);
+                W = Convert.ToInt32(slider2.Value);
+                //單位轉換
+                double h = H / 100;
+                //BMI公式計算
+                double r = (W / (h * h));
+                result.Text = r.ToString();
+                height.Background = Brushes.GreenYellow;
+                weight.Background = Brushes.GreenYellow;
+                if (r > 30)
+                {
+                    result.Background = Brushes.Red;
+                }
+                if (17 <= r && r <= 30)
+                {
+                    result.Background = Brushes.Green;
+                }
+                if (17 > r)
+                {
+                    result.Background = Brushes.Blue;
+                }
             }
-            if (17 <= r && r <= 30)
+            catch
             {
-                result.Background = Brushes.Green;
-            }
-            if (17 > r)
-            {
-                result.Background = Brushes.Blue;
+                MessageBox.Show("請輸入數字喔!");
             }
         }
 
         private void slider2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            weight.Text = slider2.Value.ToString();
-            height.Text = slider1.Value.ToString();
-            //定義變數
-            double H, W;
-            H = Convert.ToInt32(slider1.Value);
-            W = Convert.ToInt32(slider2.Value);
-            //單位轉換
-            double h = H / 100;
-            //BMI公式計算
-            double r = (W / (h * h));
-            result.Text = r.ToString();
-            height.Background = Brushes.GreenYellow;
-            weight.Background = Brushes.GreenYellow;
-            if (r > 30)
+            try
             {
-                result.Background = Brushes.Red;
+                weight.Text = slider2.Value.ToString();
+                height.Text = slider1.Value.ToString();
+                //定義變數
+                double H, W;
+                H = Convert.ToInt32(slider1.Value);
+                W = Convert.ToInt32(slider2.Value);
+                //單位轉換
+                double h = H / 100;
+                //BMI公式計算
+                double r = (W / (h * h));
+                result.Text = r.ToString();
+                height.Background = Brushes.GreenYellow;
+                weight.Background = Brushes.GreenYellow;
+                if (r > 30)
+                {
+                    result.Background = Brushes.Red;
+                }
+                if (17 <= r && r <= 30)
+                {
+                    result.Background = Brushes.Green;
+                }
+                if (17 > r)
+                {
+                    result.Background = Brushes.Blue;
+                }
             }
-            if (17 <= r && r <= 30)
+            catch
             {
-                result.Background = Brushes.Green;
-            }
-            if (17 > r)
-            {
-                result.Background = Brushes.Blue;
+                MessageBox.Show("請輸入數字喔!");
             }
         }
 
