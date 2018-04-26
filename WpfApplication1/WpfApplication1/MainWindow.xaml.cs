@@ -71,12 +71,14 @@ namespace WpfApplication1
         {
             height.Text = "0";
             height.Background = Brushes.White;
+            slider1.Value = 0;
         }
 
         private void clear2_Click(object sender, RoutedEventArgs e)
         {
             weight.Text = "0";
             weight.Background = Brushes.White;
+            slider2.Value = 0;
         }
 
         private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
